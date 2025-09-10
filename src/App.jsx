@@ -12,7 +12,7 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      {/* <div style={{ padding: '1rem' }}>
+      <div style={{ padding: '1rem' }}>
         <Routes>
           <Route path="/" element={<h1>Welcome to the Property Management App</h1>} />
           <Route path="/login" element={<Login />} />
@@ -45,7 +45,7 @@ const App = () => {
         </Routes>
 
 
-      </div> */}
+      </div>
     </Router>
   );
 };

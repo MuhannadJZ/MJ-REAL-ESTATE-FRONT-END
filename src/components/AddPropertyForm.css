@@ -32,3 +32,15 @@ textarea:focus {
   background-color: #fdfdfd;
   outline: none;
 }
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #444;
+  color: white;
+  border: none;
+}
