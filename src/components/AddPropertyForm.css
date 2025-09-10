@@ -22,14 +22,14 @@ textarea {
   margin-bottom: 20px;
   border: 1px solid #ecd0d0;
   border-radius: 10px;
-  background-color: #e3d3d3;
+  background-color: #c91e1e;
   font-size: 16px;
   transition: border 0.2s ease, background-color 0.2s ease;
 }
 input:focus,
 textarea:focus {
   border-color: #b5b3b3;
-  background-color: #fdfdfd;
+  background-color: #c51212;
   outline: none;
 }
 textarea {
