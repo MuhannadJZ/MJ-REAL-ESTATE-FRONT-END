@@ -43,3 +43,6 @@ This is a full-stack real estate management application built using the MERN sta
   <li>User roles (admin, agent, buyer)</li>
   <li>Add multi-image gallery </li>
 </ul>
+
+<h2>Credits</h2>
+<p> Developed by MJ with the guidance of  the lead instructor Omar Kamal , the associate instructors Israa Ashoor and Zaid Sarhan </p>
