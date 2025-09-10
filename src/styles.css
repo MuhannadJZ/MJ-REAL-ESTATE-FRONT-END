@@ -68,3 +68,15 @@ form button {
   cursor: pointer;
   font-size: 1rem;
 }
+
+form button:hover {
+  background-color: #1bb596;
+}
+.property-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
