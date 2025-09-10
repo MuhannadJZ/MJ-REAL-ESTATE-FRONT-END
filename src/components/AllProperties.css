@@ -1,15 +1,15 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #fcfcfc;
 }
 h1 {
   text-align: center;
   margin-top: 20px;
-  color: #333;
+  color: #212020;
 }
 h2 {
   text-align: center;
-  color: #666;
+  color: #2c2c2c;
   margin-bottom: 20px;
 }
 
@@ -47,7 +47,7 @@ h2 {
 }
 
 .property-card button {
-  background-color: #e74c3c;
+  background-color: #de2c18;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -56,11 +56,11 @@ h2 {
   cursor: pointer;
 }
 .property-card button:hover {
-  background-color: #c0392b;
+  background-color: #b73224;
 }
 
 .property-card a {
-  color: #3498db;
+  color: #1585d0;
   text-decoration: none;
   font-weight: bold;
 }
