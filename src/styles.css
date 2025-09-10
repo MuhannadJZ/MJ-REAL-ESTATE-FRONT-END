@@ -88,3 +88,10 @@ form button:hover {
 .property-card p {
   margin-bottom: 0.5rem;
 }
+.navbar a {
+    margin: 0.5rem 0;
+  }
+
+form {
+    padding: 1rem;
+  }
