@@ -26,3 +26,9 @@ textarea {
   font-size: 16px;
   transition: border 0.2s ease, background-color 0.2s ease;
 }
+input:focus,
+textarea:focus {
+  border-color: #b5b3b3;
+  background-color: #fdfdfd;
+  outline: none;
+}
