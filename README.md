@@ -19,3 +19,18 @@ This is a full-stack real estate management application built using the MERN sta
   <li>CSS – For styling components and layout</li>
   <li>Git & GitHub – Version control and repository hosting</li>
 </ul>
+<h2>Features</h2>
+
+<ul>
+  <li>User registration and login</li>
+  <li>Add new property listings with:
+    <ul>
+      <li>Title</li>
+      <li>Location</li>
+      <li>Price</li>
+      <li>Description</li>
+      <li>Image upload</li>
+    </ul>
+  </li>
+  <li>View all property listings</li>
+  <li>Edit and delete own listings</li>
