@@ -11,7 +11,18 @@ form {
 h2 {
   text-align: center;
   margin-bottom: 25px;
-  color: #222;
+  color: #111111;
   font-size: 24px;
   font-weight: 500;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fafafa;
+  font-size: 15px;
+  transition: border 0.2s ease, background-color 0.2s ease;
 }
