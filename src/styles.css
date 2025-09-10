@@ -3,3 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f9;
+  color: #151515;
+  line-height: 1.6;
+}
+div {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
