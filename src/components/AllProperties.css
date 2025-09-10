@@ -59,3 +59,12 @@ h2 {
   background-color: #c0392b;
 }
 
+.property-card a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.property-card a:hover {
+  text-decoration: underline;
+}
