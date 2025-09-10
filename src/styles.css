@@ -21,3 +21,13 @@ div {
   justify-content: space-between;
   align-items: center;
 }
+.navbar a {
+  color: #ecf0f1;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #1abc9c;
+}
