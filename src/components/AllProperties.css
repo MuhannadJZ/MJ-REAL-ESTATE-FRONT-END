@@ -30,3 +30,11 @@ h2 {
   transition: transform 0.2s;
   color: #333;
 }
+.property-card:hover {
+  transform: scale(1.02);
+}
+
+.property-card h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
