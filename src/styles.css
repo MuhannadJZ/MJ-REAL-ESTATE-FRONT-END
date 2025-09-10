@@ -31,3 +31,8 @@ div {
 .navbar a:hover {
   color: #1abc9c;
 }
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #267ed6;
+}
