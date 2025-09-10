@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { getAllProperties, deleteProperty } from '../services/realEstateServices';
-import { useNavigate } from 'react-router-dom';
+import { getAllProperties } from '../services/realEstateServices';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import './AllProperties.css';
 
 const AllProperties = () => {
   const [properties, setProperties] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProperties = async () => {
@@ -24,26 +24,26 @@ const AllProperties = () => {
     fetchProperties();
   }, []);
 
-  const handleEdit = (id) => {
-    navigate(`/edit-property/${id}`); // Assuming you have a route to edit
-  };
-
-  const handleDelete = async (id) => {
-    if (!window.confirm('Are you sure you want to delete this property?')) return;
+  const deleteproperties = async (id) => {
     try {
-      await deleteProperty(id);
-      setProperties((prev) => prev.filter((property) => property._id !== id));
-    } catch (err) {
-      alert('Failed to delete property.');
-      console.error(err);
+      console.log("IN delete")
+      const deletedValue = await axios.delete(`http://localhost:5000/api/properties/${id}`)
+      console.log(deletedValue)
+      setProperties((prev) => prev.filter((properties) => properties._id !== id))
     }
-  };
+    catch (err) {
+
+      console.log("err")
+    }
+
+  }
 
   if (loading) return <div>Loading properties...</div>;
   if (error) return <div>{error}</div>;
 
   return (
     <div>
+      <h1>MJ PROPERTIES</h1>
       <h2>All Properties</h2>
       <div className="property-list">
         {properties.map((property) => (
@@ -54,21 +54,13 @@ const AllProperties = () => {
             <p>Location: {property.location}</p>
             {property.createdBy && (
               <p>
-                Created by: {property.createdBy.name} ({property.createdBy.role})
-              </p>
+            Created by: {property.createdBy.name} ({property.createdBy.role})
+            </p>
             )}
             {property.imageUrl && <img src={property.imageUrl} alt={property.title} width="200" />}
-            <div style={{ marginTop: '0.5rem' }}>
-              <button onClick={() => handleEdit(property._id)} style={{ marginRight: '0.5rem' }}>
-                Edit
-              </button>
-              <button
-                onClick={() => handleDelete(property._id)}
-                style={{ background: 'red', color: 'white' }}
-              >
-                Delete
-              </button>
-            </div>
+            
+            <button onClick={() => deleteproperties(property._id)}>Delete</button>
+            <Link to={`/properties/${property._id}/edit`}>   Edit Property</Link>
           </div>
         ))}
       </div>
@@ -77,3 +69,4 @@ const AllProperties = () => {
 };
 
 export default AllProperties;
+

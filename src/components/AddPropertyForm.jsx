@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createProperty } from '../services/realEstateServices';
+import './AddPropertyForm.css';
 
-const AddPropertyForm = () => {
+const AddPropertyForm = ({ onPropertyAdded }) => {
   const [propertyData, setPropertyData] = useState({
     title: '',
     description: '',
@@ -12,29 +13,22 @@ const AddPropertyForm = () => {
   });
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      navigate('/login');
-    }
-  }, [navigate]);
-
   const handleChange = (e) => {
-    setPropertyData({
-      ...propertyData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setPropertyData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
+
     try {
-      await createProperty(propertyData);
+      const newProperty = await createProperty(propertyData);
+      onPropertyAdded(newProperty);
+
       setPropertyData({
         title: '',
         description: '',
@@ -42,8 +36,9 @@ const AddPropertyForm = () => {
         location: '',
         imageUrl: '',
       });
+
       navigate('/all-properties');
-    } catch {
+    } catch (error) {
       setError('Error creating property, please try again.');
     } finally {
       setIsSubmitting(false);
@@ -52,11 +47,46 @@ const AddPropertyForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* form inputs here */}
+      <h2>Add Property</h2>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <input
+        name="title"
+        placeholder="Title"
+        value={propertyData.title}
+        onChange={handleChange}
+        required
+      />
+      <textarea
+        name="description"
+        placeholder="Description"
+        value={propertyData.description}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="price"
+        type="number"
+        placeholder="Price"
+        value={propertyData.price}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="location"
+        placeholder="Location"
+        value={propertyData.location}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="imageUrl"
+        placeholder="Image URL"
+        value={propertyData.imageUrl}
+        onChange={handleChange}
+      />
       <button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? 'Submitting...' : 'Add Property'}
+        {isSubmitting ? 'Submitting...' : 'Submit'}
       </button>
-      {error && <p>{error}</p>}
     </form>
   );
 };

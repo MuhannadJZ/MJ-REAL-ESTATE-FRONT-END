@@ -8,7 +8,7 @@ const Navbar = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      setUser({ name: 'User' }); // Replace with actual user data if decoded
+      setUser({ name: 'User' });
     } else {
       setUser(null);
     }
@@ -21,19 +21,20 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
-      <Link to="/">Home</Link> |{' '}
-      <Link to="/all-properties">All Properties</Link> |{' '}
-      <Link to="/add-property">Add Property</Link> |{' '}
+    <nav style={{ padding: '1rem', borderBottom: '2px solid #ddd' }}>
+      <Link to="/" style={{ marginRight: '1rem' }}>Home</Link> |{' '}
+      <Link to="/all-properties" style={{ marginRight: '1rem' }}>All Properties</Link> |{' '}
+      
       {user ? (
         <>
-          <span>Welcome, {user.name}!</span> |{' '}
-          <button onClick={handleLogout}>Logout</button>
+          <Link to="/add-property" style={{ marginRight: '1rem' }}>Add Property</Link> |{' '}
+          <span style={{ marginRight: '1rem' }}>Have a Great Time !</span> |{''}
+          <button onClick={handleLogout} style={{ padding: '0.5rem 1rem' }}>Logout</button>
         </>
       ) : (
         <>
-          <Link to="/login">Login</Link> |{' '}
-          <Link to="/signup">Signup</Link>
+          <Link to="/login" style={{ marginRight: '1rem' }}>Login</Link> |{' '}
+          <Link to="/signup" style={{ marginRight: '1rem' }}>Signup</Link>
         </>
       )}
     </nav>

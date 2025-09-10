@@ -6,7 +6,8 @@ import AllProperties from './components/AllProperties';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import ProtectedRoute from './components/ProtectedRoute';
-
+import EditPropertyForm from './components/EditPropertyForm';
+import './styles.css';
 const App = () => {
   return (
     <Router>
@@ -16,23 +17,34 @@ const App = () => {
           <Route path="/" element={<h1>Welcome to the Property Management App</h1>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route 
-            path="/add-property" 
+          <Route
+            path="/add-property"
             element={
               <ProtectedRoute>
                 <AddPropertyForm />
               </ProtectedRoute>
-            } 
+            }
           />
-          <Route 
-            path="/all-properties" 
+          <Route
+            path="/all-properties"
             element={
               <ProtectedRoute>
                 <AllProperties />
               </ProtectedRoute>
-            } 
+            }
+          />
+
+                   <Route
+            path='properties/:id/edit' 
+            element={
+              <ProtectedRoute>
+                <EditPropertyForm />
+              </ProtectedRoute>
+            }
           />
         </Routes>
+
+
       </div>
     </Router>
   );
