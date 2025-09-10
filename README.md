@@ -34,3 +34,12 @@ This is a full-stack real estate management application built using the MERN sta
   </li>
   <li>View all property listings</li>
   <li>Edit and delete own listings</li>
+
+  <h2>Future Improvements</h2>
+
+<ul>
+  <li>Add property filtering and search</li>
+  <li>Display map previews using Mapbox</li>
+  <li>User roles (admin, agent, buyer)</li>
+  <li>Add multi-image gallery </li>
+</ul>
